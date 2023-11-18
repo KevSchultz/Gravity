@@ -4,6 +4,6 @@ cmake_policy(SET CMP0072 NEW)
 
 find_package(OpenGL REQUIRED)
 
-add_executable(gravity src/main.cpp src/glad.c src/stb_image.cpp)
+add_executable(gravity src/main.cpp src/glad.c src/StarSystem.cpp)
 
 target_link_libraries(gravity glfw OpenGL::GL)
