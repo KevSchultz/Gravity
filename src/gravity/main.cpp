@@ -8,7 +8,7 @@ int main()
 
 	while (1)
 	{
-        std::cout << "In loop\n" << std::endl;
+        // std::cout << "In loop\n" << std::endl;
         window.drawSquare();
 	}
 

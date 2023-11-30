@@ -1,5 +1,6 @@
 #pragma once
 
+#include "shader.hpp"
 #include <string>
 
 // Forward declare GLFWwindow to avoid including glfw3.h
@@ -21,7 +22,7 @@ namespace renderer
 
 	private:
 		GLFWwindow* window;
-        unsigned int shaderProgram;
+        Shader shaderProgram;
         unsigned int VAO;
 	};
 }

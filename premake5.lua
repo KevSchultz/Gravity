@@ -58,6 +58,7 @@ project "renderer"
     -- kind is used to indicate the type of this project.
     kind "StaticLib"
 
+
     -- glad headers
     includedirs "libraries/glad/include"
 
@@ -68,10 +69,10 @@ project "renderer"
     -- It would be better to separate header files in a folder and sources
     -- in another, but for our simple project we will put everything in the same place.
     -- Note: ** means recurse in subdirectories, so it will get all the files in ExampleLib/
-    files "src/renderer/**"
+    files "src/renderer/*"
 
--- We need GLFW, so we include it
-includeGLFW()
+    -- We need GLFW, so we include it
+    includeGLFW()
 
 function useRenderer()
     -- The library's public headers
