@@ -1,4 +1,4 @@
-#include "shader.hpp"
+#include "Shader.hpp"
 
 #include <glad/glad.h>
 
@@ -41,6 +41,7 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
     const char *fShaderCode = fragmentCode.c_str();
 
     std::cout << "Vertex shader code:\n" << vShaderCode << std::endl;
+    std::cout << "Fragment shader code:\n" << fShaderCode << std::endl;
 
     // 2. compile shaders
     unsigned int vertex, fragment;

@@ -91,6 +91,10 @@ project "gravity"
     kind "WindowedApp"
     files "src/gravity/**"
 
+    includedirs "libraries/glad/include"
+
+    linkGLFW()
+
     -- We also need the headers
     includedirs "src/OpenGL"
 

@@ -10,11 +10,10 @@
  *  It uses the window class.
  *
  */
-
 #pragma once
 
-#include "Window.hpp"
 #include "Mesh.hpp"
+#include "Shader.hpp"
 
 #include <string>
 #include <vector>
@@ -23,7 +22,7 @@ class Renderer
 {
 public:
 	/** @brief Constructor for the Renderer class.
-	 *
+	 * 
 	 * @return Renderer object
 	 */
 	Renderer();
@@ -35,6 +34,12 @@ public:
 	 */
 	~Renderer();
 
+	/** @brief Draw Mesh objects to window
+	 * 
+	 * @return void
+	*/
+	void draw();
+
 	/** @brief clear screen
 	 *
 	 * @return void
@@ -42,7 +47,13 @@ public:
 	 */
 	void clearScreen();
 
+	/** @brief Add Meshes to renderer vector 
+	 * 
+	 * @return void
+	*/
+	void addMesh(Mesh *mesh);
+
 private:
-	Window window;
-	std::vector<Mesh> meshes;
+	Shader shaderProgram;
+	std::vector<Mesh *> meshes;
 };
