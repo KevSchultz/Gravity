@@ -1,15 +1,26 @@
-#include <renderer.hpp>
+//  ██╗  ██╗███████╗
+//  ██║ ██╔╝██╔════╝
+//  █████╔╝ ███████╗
+//  ██╔═██╗ ╚════██║
+//  ██║  ██╗███████║
+//  ╚═╝  ╚═╝╚══════╝
+/*
+ *  Gravity
+ *  A simple n-body gravity simulator
+ * 
+*/
+
+#include <Window.hpp>
 #include <iostream>
 
 int main()
 {
-    using namespace renderer;
 	Window window{ 800, 600, "Hello World!" };
 
-	while (1)
+	while (!window.shouldClose())
 	{
-        // std::cout << "In loop\n" << std::endl;
-        window.drawSquare();
+        window.pollEvents();
+		window.swapBuffers();
 	}
 
 	return 0;

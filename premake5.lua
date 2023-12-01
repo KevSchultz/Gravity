@@ -54,7 +54,7 @@ function linkGLFW()
 end
 
 -- Our first project, the static library
-project "renderer"
+project "OpenGL"
     -- kind is used to indicate the type of this project.
     kind "StaticLib"
 
@@ -69,18 +69,18 @@ project "renderer"
     -- It would be better to separate header files in a folder and sources
     -- in another, but for our simple project we will put everything in the same place.
     -- Note: ** means recurse in subdirectories, so it will get all the files in ExampleLib/
-    files "src/renderer/*"
+    files "src/OpenGL/**"
 
     -- We need GLFW, so we include it
     includeGLFW()
 
-function useRenderer()
+function useOpenGL()
     -- The library's public headers
-    includedirs "src/renderer"
+    includedirs "src/OpenGL"
 
     -- We link against a library that's in the same workspace, so we can just
     -- use the project name - premake is really smart and will handle everything for us.
-    links "renderer"
+    links "OpenGL"
 
     -- Users of Renderer need to link GLFW
     linkGLFW()
@@ -88,10 +88,10 @@ end
 
 -- gravity app
 project "gravity"
-kind "WindowedApp"
-files "src/gravity/**"
+    kind "WindowedApp"
+    files "src/gravity/**"
 
--- We also need the headers
-includedirs "src/renderer"
+    -- We also need the headers
+    includedirs "src/OpenGL"
 
-useRenderer()
+    useOpenGL()
