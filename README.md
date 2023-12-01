@@ -1,4 +1,4 @@
-# Gravity
+# Gravity (WORK IN PROGRESS) (NOT USUABLE)
 This is a simple C++ project that demonstrates gravity with glfw3.
 
 ## Prerequisites
